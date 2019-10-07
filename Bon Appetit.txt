@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the bonAppetit function below.
+def bonAppetit(bill, k, b):
+    a=list(bill)
+    s=sum(a)
+    s1=s-bill[k]
+    s2=s1/2
+    if b==s2:
+        print("Bon Appetit")
+    else:
+        print(int(b-s2))
+    
+if __name__ == '__main__':
+    nk = input().rstrip().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    bill = list(map(int, input().rstrip().split()))
+
+    b = int(input().strip())
+
+    bonAppetit(bill, k, b)
