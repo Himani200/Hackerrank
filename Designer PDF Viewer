@@ -1,0 +1,41 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the designerPdfViewer function below.
+def designerPdfViewer(h, word):
+    w=[]
+    w=list(word)
+    w1=len(w)
+    k=-1
+    for i in range(w1):
+        m=w[i]
+        m1=ord(m)
+        m2=m1-97
+        if h[m2]>k:
+            k=h[m2]
+        else:
+            k=k
+        m1=0
+        m2=0
+    k1=k*w1
+    return k1
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    h = list(map(int, input().rstrip().split()))
+
+    word = input()
+
+    result = designerPdfViewer(h, word)
+    #designerPdfViewer(h, word)
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
